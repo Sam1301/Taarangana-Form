@@ -1,0 +1,194 @@
+/*custom font Montserrat*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	
+    /*background*/
+    background: #092756;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,
+    			rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, 
+    			rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,
+    			rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,
+    			rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,
+    			rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,
+    			rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,
+    			rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,
+    			rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,
+    			rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,
+    			rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
+    /*background fixed while scrolling*/
+    background-attachment: fixed;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', 
+    			endColorstr='#092756',GradientType=1 );
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+
+/*form styles*/
+#Tform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#Tform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*positioning fieldsets above each other*/
+	position: relative;
+}
+
+/*Hide all except first fieldset*/
+#Tform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/*inputs*/
+#Tform input, #Tform textarea, #Tform select{
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+/*buttons*/
+#Tform .action-button {
+	width: 100px;
+	background: #ff6666;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#Tform .action-button:hover, #Tform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #ff6666;
+}
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.title_text {
+	font-size: 14px;
+	text-align: left;
+	color: #2C3E50;
+	margin-bottom: 0px;
+}
+.fs-subtitle, .radio, #drop-down-div, .checkboxes {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+/*radio buttons and checkboxes*/
+.radio {
+	display: inline-block;
+}
+.checkboxes {
+	text-align: left;
+	
+}
+
+/*error spans*/
+.error {
+	visibility: hidden;
+	color: red; 
+	font-family: 'Raleway',sans-serif; 
+	font-style: italic;
+	font-size: 13px; 
+	font-weight: 500; 
+	line-height: 32px; 
+	color: red;
+}
+
+/*equally space radio buttons*/
+#radio-container {
+	display:flex;
+	justify-content:space-between;
+}
+
+/*drop-down list*/
+#drop-down-div {
+	margin-bottom: 8px;
+}
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counter for numbering the progressbar steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1;
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+
+/*marking active/completed steps green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #ff6666;
+	color: white;
+}
